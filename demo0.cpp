@@ -6,13 +6,21 @@ const int N = 3;
 
 int numbers[N] = {11, 12, 13};
 
+int bar()
+{
+	int s = 0;
+	for (int i = 0; i < 10000; ++i)
+		s += i;
+	return s;
+}
+
 int foo()
 {
 	int i;
 	int s = 0;
 	for (i = 0; i < 10000; ++i)
 		s += i;
-	return s;
+	return s + bar();
 }
 
 int main()
