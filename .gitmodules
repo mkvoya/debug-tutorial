@@ -1,0 +1,6 @@
+[submodule "tools/FlameGraph"]
+	path = tools/FlameGraph
+	url = https://github.com/brendangregg/FlameGraph.git
+[submodule "sub-tutorials/bisectercise"]
+	path = sub-tutorials/bisectercise
+	url = git@github.com:bradleyboy/bisectercise.git
