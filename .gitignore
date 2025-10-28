@@ -29,3 +29,5 @@
 matrix_multiplication
 numbers
 mergesort
+.DS_Store
+/cmake/.idea/
