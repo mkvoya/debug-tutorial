@@ -9,22 +9,22 @@ int main()
     const int R=r;
     int a[1000][1000]={0};
     for(int i=0;i<R;i++){
-        for(int j=1;j<i+1;j++) cin>>a[i][j];
+        for(int j=0;j<=i;j++) cin>>a[i][j];
     }
     //  (0,1)
     //  (1,1) (1,2)
     //  (2,1) (2,2) (2,3)
     //
     for(int i=1;i<R;i++){
-        for(int j=1;j<i+1;j++){
-            a[i][j]+=max(a[i-1][j-1],a[i-1][j]);
-	    // a[1][1] += max(a[0][0], a[0][1])
-	    // a[2][1] += max(a[1][0], a[1][1])
+        for(int j=0;j<=i;j++){
+            if(j==0) a[i][j]+=a[i-1][j];
+            else if(j==i) a[i][j]+=a[i-1][j-1];
+            else a[i][j]+=max(a[i-1][j-1],a[i-1][j]);
         }
     }
     int ans=0;
-    for(int j=1;j<=R+1;j++){
-        if(a[R-1][j]>ans) ans=a[R-1][j];
+    for(int j=0;j<R;j++){
+        ans = max(ans, a[R-1][j]);
     }
     cout<<ans<<endl;
     return 0;
